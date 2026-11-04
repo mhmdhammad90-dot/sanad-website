@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="سند للحلول التسويقية والإبداعية — نسندك لتكبر.">
+<meta name="theme-color" content="#0E2350">
+<style>body{margin:0}img{max-width:100%}</style>
+<title>سند — ادخل من النقطة</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','ar');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<style>
+/* Plan
+   Layout: RTL, right-aligned text. A quiet mist page carries the mark at full size; the only big motion is the scroll
+   that zooms through the orange nuqta into an orange chapter. Services are a typographic index, the process is four
+   orange blocks standing on one baseline and growing taller, work is an editorial pair. Corners: 4px on blocks, pills
+   only on buttons. Single deliberate look (brand), no dark variant.
+   Color: identity palette only. Type: Readex Pro (everything Arabic), Lexend (Latin lines and figures). */
+:root{
+  --navy:#0E2350; --orange:#F5821F; --deep:#B2560A; --mist:#F3F5F9; --slate:#5B6478; --white:#FFFFFF;
+  --line:rgba(14,35,80,.14); --line-on-navy:rgba(243,245,249,.16); --muted-on-navy:rgba(243,245,249,.74);
+  --f-ar:"Readex Pro","Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-en:"Lexend","Readex Pro","Segoe UI",system-ui,sans-serif;
+  --t-hero:clamp(54px,8.6vw,136px); --t-1:clamp(36px,5.2vw,78px); --t-2:clamp(26px,3vw,44px); --t-3:clamp(20px,1.7vw,24px); --t-body:clamp(16px,1.15vw,18px); --t-small:14px;
+  --gut-l:max(20px,env(safe-area-inset-left,0px)); --gut-r:max(20px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+[hidden]{display:none!important}
+html{direction:rtl;background:var(--mist)}
+*{box-sizing:border-box}
+body{direction:rtl;text-align:right;background:var(--mist);color:var(--navy);font-family:var(--f-ar);font-size:var(--t-body);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--mist)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:4px}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.1;text-wrap:balance}
+p{margin:0}
+.en{font-family:var(--f-en);direction:ltr;unicode-bidi:isolate}
+.wrap{max-width:1320px;margin-inline:auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+
+/* header */
+header{position:fixed;top:env(safe-area-inset-top,0px);inset-inline:0;z-index:30;background:rgba(243,245,249,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:16px}
+.brand svg{height:30px;width:auto;display:block;color:var(--navy)}
+.nav{display:flex;gap:26px;font-size:15px}
+.nav a{text-decoration:none;color:var(--navy);opacity:.72}
+.nav a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;font:600 15px/1 var(--f-ar);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-navy{background:var(--navy);color:var(--mist)}
+.btn-navy:hover{background:var(--deep)}
+.btn-line{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-line:hover{background:var(--navy);color:var(--mist)}
+.btn-orange{background:var(--orange);color:var(--navy)}
+.btn-orange:hover{background:var(--mist)}
+
+/* hero: the mark at full size; scroll zooms through the orange nuqta */
+.hero-pin{height:360vh;position:relative}
+.hero-sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center;padding-top:76px}
+.hero-sticky.filled{background:var(--orange)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center;width:100%}
+.hero-copy h1{font-size:var(--t-hero);letter-spacing:-.01em;line-height:1}
+.hero-copy .en-line{font:300 clamp(17px,1.5vw,21px)/1.3 var(--f-en);color:var(--slate);margin-top:18px}
+.hero-copy .lead{max-width:34ch;margin-top:22px;color:var(--slate)}
+.hero-copy .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-mark{position:relative}
+.hero-mark svg{display:block;width:100%;height:auto;overflow:visible}
+.hero-mark .cap{display:flex;justify-content:space-between;gap:16px;margin-top:22px;font-size:var(--t-small);color:var(--slate)}
+#dot-shape{opacity:0}  /* at rest the nuqta is the official hole showing the page; light appears behind it only once the shot starts */
+
+/* orange chapter (where the nuqta leads) */
+.orange{background:var(--orange);color:var(--navy)}
+.statement{padding-block:clamp(70px,8vw,110px) clamp(90px,12vw,170px)}
+.statement h2{font-size:var(--t-1);max-width:16ch}
+.statement .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:clamp(40px,6vw,80px);max-width:980px}
+.statement .cols p{font-size:clamp(17px,1.35vw,20px);color:var(--navy)}
+
+/* services: a typographic index */
+.index{padding-block:clamp(90px,11vw,160px)}
+.sec-title{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,56px)}
+.sec-title h2{font-size:var(--t-1)}
+.sec-title p{max-width:38ch;color:var(--slate)}
+.svc{border-top:1.5px solid var(--navy)}
+.svc-item{border-bottom:1px solid var(--line)}
+.svc-head{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding-block:clamp(18px,2.2vw,30px);background:none;border:0;color:var(--navy);text-align:right;cursor:pointer;font:inherit}
+.svc-head h3{font-size:var(--t-2);font-weight:600}
+.svc-head .en{font:400 15px/1 var(--f-en);color:var(--slate);margin-right:14px;display:inline-block}
+@media (max-width:560px){.svc-head .en{display:block;margin:8px 0 0}}
+.svc-head .pm{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--navy);display:grid;place-items:center;transition:background .25s,transform .35s}
+.svc-head .pm svg{width:14px;height:14px}
+.svc-item.open .pm{background:var(--orange);border-color:var(--orange);transform:rotate(45deg)}
+.svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.svc-item.open .svc-body{grid-template-rows:1fr}
+.svc-body>div{overflow:hidden}
+.svc-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;padding-bottom:30px}
+.svc-inner p{color:var(--slate);max-width:52ch}
+.svc-inner ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:16px}
+.svc-inner li{display:flex;gap:10px;align-items:center}
+.svc-inner li::before{content:"";width:7px;height:7px;background:var(--orange);transform:rotate(45deg);flex:none}
+
+/* process: four supports on one baseline, each taller than the last */
+.process{background:var(--navy);color:var(--mist);padding-block:clamp(90px,11vw,160px) 0;overflow:hidden}
+.process .sec-title p{color:var(--muted-on-navy)}
+.stack{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,22px);align-items:end;margin-top:20px}
+.col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.col .n{font:500 15px/1 var(--f-en);color:var(--orange)}
+.col h3{font-size:var(--t-3)}
+.col p{font-size:15px;color:var(--muted-on-navy)}
+.col .out{font-size:14px;color:var(--mist)}
+.col .block{background:var(--orange);border-radius:4px 4px 0 0;margin-top:10px;position:relative}
+.col:nth-child(1) .block{height:70px}
+.col:nth-child(2) .block{height:130px}
+.col:nth-child(3) .block{height:200px}
+.col:nth-child(4) .block{height:280px}
+.col .block span{position:absolute;inset-block-end:14px;inset-inline-start:16px;font:500 13px/1 var(--f-en);color:var(--navy)}
+.baseline{height:1.5px;background:var(--orange)}
+.process .note{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px 40px;font-size:14px;color:var(--muted-on-navy)}
+
+/* work: editorial pair */
+.work{padding-block:clamp(90px,11vw,160px)}
+.feature{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,60px);align-items:end}
+.plate{background:var(--navy);aspect-ratio:4/3;max-width:100%;border-radius:4px;display:grid;place-items:center;position:relative;overflow:hidden}
+.plate svg{width:68%;height:auto;color:var(--mist)}
+.plate.ph{background:var(--white);border:1px solid var(--line);color:var(--slate);font-size:14px}
+.feature .txt h3{font-size:var(--t-2)}
+.feature .txt p{color:var(--slate);margin-top:12px;max-width:40ch}
+.feature .txt .meta{margin-top:18px;font-size:var(--t-small);color:var(--deep)}
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:clamp(40px,6vw,80px)}
+.more article{display:flex;flex-direction:column;gap:12px}
+.more h3{font-size:var(--t-3)}
+.more p{color:var(--slate);font-size:15px}
+
+/* contact */
+.contact{background:var(--navy);color:var(--mist);padding-block:clamp(90px,11vw,160px)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px)}
+.contact h2{font-size:var(--t-1)}
+.contact .lead{color:var(--muted-on-navy);margin-top:18px;max-width:40ch}
+.lines{display:flex;flex-direction:column;margin-top:34px}
+.lines div{display:flex;justify-content:space-between;gap:16px;padding-block:14px;border-top:1px solid var(--line-on-navy);font-size:15px}
+.lines span{color:var(--muted-on-navy)}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:14px;color:var(--muted-on-navy)}
+input,textarea{font:400 17px/1.5 var(--f-ar);color:var(--mist);background:transparent;border:0;border-bottom:1.5px solid var(--line-on-navy);border-radius:0;padding:10px 0;width:100%;min-width:0;text-align:right}
+input::placeholder,textarea::placeholder{color:rgba(243,245,249,.4)}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--orange)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;inset:0;opacity:0;cursor:pointer;padding:0;border:0}
+.chip span{display:inline-flex;min-height:42px;align-items:center;padding:0 16px;border-radius:999px;border:1.5px solid var(--line-on-navy);font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.chip input:checked+span{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+.chip input:focus-visible+span{outline:2px solid var(--orange);outline-offset:2px}
+.result{grid-column:1/-1;border:1.5px dashed var(--orange);border-radius:4px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.result pre{margin:0;white-space:pre-wrap;font:400 15px/1.7 var(--f-ar)}
+footer{background:var(--navy);color:var(--muted-on-navy);border-top:1px solid var(--line-on-navy);padding-block:26px 36px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+footer svg{height:22px;width:auto;color:var(--mist)}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .hero-pin{height:300vh}
+  .hero-sticky{align-items:flex-start;padding-top:84px}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-copy .lead{display:none}
+  .statement .cols,.svc-inner,.feature,.more,.contact-grid{grid-template-columns:1fr}
+  .stack{grid-template-columns:1fr;gap:18px;align-items:stretch}
+  .col{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+  .col .block{height:14px!important;border-radius:0 4px 4px 0;margin-top:6px}
+  .col:nth-child(1) .block{width:25%}.col:nth-child(2) .block{width:48%}.col:nth-child(3) .block{width:72%}.col:nth-child(4) .block{width:100%}
+  .col .block span{display:none}
+  .baseline{display:none}
+  .process{padding-bottom:60px}
+}
+@media (max-width:560px){ form{grid-template-columns:1fr} .bar .btn{min-height:44px;padding:0 18px} .hero-copy .row .btn{flex:1 1 auto} }
+@media (prefers-reduced-motion:reduce){ .svc-body{transition:none} .hero-pin{height:auto} .hero-sticky{position:relative;height:auto;padding-block:120px 80px} }
+
+/* ===== cinematic layer for the nuqta shot ===== */
+header{transition:transform .6s cubic-bezier(.7,0,.2,1)}
+header.hide{transform:translateY(-120%)}
+.hero-sticky>*{position:relative}
+.fx{position:absolute!important;inset:0;pointer-events:none}
+#streaks{z-index:3;width:100%;height:100%}
+.vig{z-index:4;background:radial-gradient(120% 90% at 50% 50%,transparent 45%,rgba(14,35,80,.85));opacity:0}
+.flash{z-index:6;background:radial-gradient(60% 60% at 50% 50%,#FFFFFF,rgba(245,130,31,.4) 60%,transparent);opacity:0;mix-blend-mode:screen}
+.grain{z-index:7;opacity:.075;mix-blend-mode:multiply;animation:grain .6s steps(3) infinite;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+@keyframes grain{33%{background-position:40px -30px}66%{background-position:-25px 50px}}
+.lb{position:absolute!important;inset-inline:0;height:0;background:var(--navy);z-index:8;display:flex;align-items:center;justify-content:center}
+.lb-top{top:0}.lb-bot{bottom:0}
+.sub{font:400 clamp(15px,1.3vw,19px)/1.4 var(--f-ar);color:var(--mist);opacity:0;padding-inline:20px;text-align:center}
+.title-card{z-index:5;display:flex;align-items:center;opacity:0}
+.title-card h2{font-size:var(--t-1);max-width:16ch;color:var(--navy)}
+.hero-grid{z-index:2}
+#dot-shape{transition:filter .1s linear}
+.rm-only{display:none}
+@media (prefers-reduced-motion:reduce){ .fx,.lb,.title-card{display:none!important} .rm-only{display:block} header.hide{transform:none} }
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="d-mark" d="M0.02 119.76L0.00 0.00L374.69 0.00C704.19 0.00 749.33 0.04 748.95 0.33C748.71 0.51 748.30 0.66 748.03 0.67C747.77 0.67 747.42 0.84 747.25 1.04C746.71 1.70 744.14 3.35 734.90 9.00C732.73 10.33 728.73 12.77 726.01 14.44C723.29 16.10 719.44 18.49 717.46 19.73C713.97 21.93 711.59 23.39 702.16 29.13C699.68 30.64 696.80 32.42 695.74 33.10C694.68 33.77 692.61 35.06 691.13 35.97C689.65 36.87 686.86 38.58 684.95 39.76C670.85 48.42 659.96 54.56 637.58 66.45C626.84 72.16 605.78 82.22 594.15 87.20C592.05 88.10 589.16 89.36 587.74 90.00C582.98 92.15 567.13 98.60 558.26 102.00C533.28 111.57 509.93 119.08 490.31 123.87C488.64 124.28 486.26 124.86 485.02 125.17C481.31 126.09 475.75 127.35 472.76 127.94C466.15 129.25 459.44 130.45 456.33 130.87C454.91 131.06 451.87 131.51 449.58 131.87C447.29 132.23 444.15 132.64 442.60 132.77C441.06 132.90 437.87 133.21 435.52 133.45C428.12 134.21 426.64 134.32 421.57 134.55C408.64 135.14 391.41 134.63 383.76 133.42C383.02 133.31 381.03 133.10 379.34 132.98C376.16 132.73 375.12 132.59 368.12 131.42C364.49 130.81 361.54 130.22 356.31 129.06C353.52 128.44 349.27 127.31 347.31 126.68C346.20 126.31 344.60 125.86 343.77 125.67C338.33 124.43 326.22 119.93 316.93 115.71C310.82 112.93 310.16 112.72 306.92 112.58C302.07 112.36 297.81 113.71 293.72 116.74C290.26 119.31 290.21 119.36 275.87 138.72C274.22 140.95 272.15 143.72 271.27 144.87C270.40 146.02 268.97 147.95 268.11 149.16C267.24 150.36 266.02 152.00 265.40 152.80C264.77 153.60 263.47 155.36 262.49 156.72C254.95 167.23 248.42 173.05 239.17 177.53C236.26 178.93 229.93 181.20 228.17 181.46C227.61 181.55 225.89 181.89 224.34 182.21C215.97 183.99 204.52 182.33 196.34 178.14C183.20 171.43 177.09 153.93 182.26 137.82C183.59 133.68 186.33 129.09 193.86 118.36C201.25 107.83 204.33 101.11 205.42 93.08C205.81 90.26 205.73 79.19 205.31 77.29C205.12 76.43 204.66 74.33 204.30 72.62C202.98 66.42 202.49 66.60 195.55 75.83C185.92 88.63 169.80 105.24 155.82 116.78C137.18 132.17 113.50 146.59 92.93 155.08C91.14 155.82 88.20 157.03 86.41 157.77C80.77 160.10 72.05 163.14 63.29 165.82C62.02 166.21 60.17 166.92 59.18 167.40C57.73 168.10 57.03 168.29 55.53 168.42C48.37 169.02 35.62 174.43 28.91 179.71C23.30 184.13 22.01 186.27 15.75 201.50C14.78 203.85 13.28 207.50 12.42 209.60C11.55 211.71 10.27 214.74 9.56 216.35C8.86 217.96 7.54 221.10 6.63 223.33C3.25 231.62 2.04 234.49 1.39 235.75C1.02 236.47 0.57 237.61 0.38 238.29C0.07 239.40 0.03 227.47 0.02 119.76ZM284.60 96.31C285.82 95.75 293.89 90.16 296.12 88.33C297.05 87.57 298.47 86.45 299.27 85.84C307.37 79.77 316.65 69.57 319.87 63.21C324.37 54.29 323.42 46.87 316.93 40.39C311.71 35.17 302.47 29.94 292.06 26.31C284.26 23.59 284.61 23.53 280.65 27.98C279.19 29.61 276.08 33.07 273.73 35.66C271.38 38.26 268.80 41.19 268.00 42.17C267.21 43.15 264.27 46.49 261.48 49.60C258.69 52.70 255.68 56.10 254.80 57.15C253.92 58.21 252.02 60.38 250.58 61.99C245.98 67.13 245.97 67.73 250.45 71.30C251.74 72.33 254.37 74.51 256.29 76.14C258.21 77.78 260.44 79.61 261.24 80.21C262.05 80.82 263.92 82.34 265.41 83.59C266.89 84.84 269.32 86.83 270.81 88.01C272.29 89.18 274.64 91.13 276.04 92.33C281.40 96.94 282.28 97.36 284.60 96.31Z"/>
+    <path id="d-support" d="M0.01 240.82C0.03 239.81 0.07 239.64 0.23 240.04C0.67 241.13 2.77 241.37 6.64 240.78C8.25 240.54 11.28 240.08 13.39 239.76C19.96 238.77 27.97 237.28 32.24 236.26C41.88 233.95 43.80 233.43 51.75 230.93C84.55 220.64 117.70 201.66 144.63 177.76C147.78 174.97 148.88 174.29 149.75 174.61C150.73 174.97 150.78 175.44 150.63 182.49C150.33 196.38 151.68 209.29 154.18 216.46C157.47 225.89 164.47 233.87 173.15 238.07C176.39 239.64 181.69 241.37 183.84 241.55C184.89 241.64 186.36 241.79 187.10 241.88C187.84 241.97 146.05 242.06 94.23 242.08L0.00 242.12L0.01 240.82Z"/>
+    <path id="d-word" d="M332.55999999999995 243.32Q324.76 243.32 318.34 241.4Q311.91999999999996 239.48000000000002 306.93999999999994 235.76Q301.96 232.04 298.0 226.76L309.28 213.92000000000002Q315.15999999999997 222.08 320.97999999999996 225.02Q326.79999999999995 227.96 333.64 227.96Q337.35999999999996 227.96 340.29999999999995 226.88Q343.23999999999995 225.8 344.91999999999996 223.94Q346.59999999999997 222.08 346.59999999999997 219.44Q346.59999999999997 217.52 345.76 215.9Q344.91999999999996 214.28 343.35999999999996 213.01999999999998Q341.79999999999995 211.76 339.64 210.74Q337.47999999999996 209.72 334.84 208.94Q332.2 208.16 329.08 207.68Q322.35999999999996 206.12 317.31999999999994 203.9Q312.28 201.68 308.91999999999996 198.38Q305.56 195.08 303.94 190.88Q302.32 186.68 302.32 181.4Q302.32 176.0 304.72 171.38Q307.12 166.76 311.38 163.4Q315.64 160.04000000000002 321.21999999999997 158.24Q326.79999999999995 156.44 333.03999999999996 156.44Q340.71999999999997 156.44 346.47999999999996 158.12Q352.23999999999995 159.8 356.5 163.10000000000002Q360.76 166.4 363.64 171.08L352.23999999999995 182.12Q349.71999999999997 178.76 346.78 176.48Q343.84 174.2 340.41999999999996 173.06Q337.0 171.92000000000002 333.4 171.92000000000002Q329.44 171.92000000000002 326.55999999999995 172.94Q323.67999999999995 173.96 322.05999999999995 175.94Q320.44 177.92000000000002 320.44 180.56Q320.44 182.72 321.52 184.4Q322.59999999999997 186.08 324.64 187.34000000000003Q326.67999999999995 188.60000000000002 329.55999999999995 189.56Q332.44 190.52 335.91999999999996 191.24Q342.52 192.56 347.79999999999995 194.72Q353.08 196.88 356.86 199.94Q360.64 203.0 362.67999999999995 207.14Q364.71999999999997 211.28 364.71999999999997 216.44Q364.71999999999997 224.96 360.64 230.96Q356.55999999999995 236.96 349.35999999999996 240.14Q342.15999999999997 243.32 332.55999999999995 243.32ZM415.47 158.12 381.99 242.12H401.07L418.59000000000003 196.64Q420.03000000000003 192.92000000000002 421.05 190.10000000000002Q422.07 187.28 422.85 184.82Q423.63 182.36 424.35 180.02Q425.07 177.68 425.79 174.92000000000002L422.31 174.8Q423.27000000000004 178.52 424.17 181.7Q425.07 184.88 426.33000000000004 188.42000000000002Q427.59000000000003 191.96 429.39 196.64L445.95000000000005 242.12H464.91L431.19 158.12ZM482.18 242.12V158.12H498.26L544.7 220.88H541.34Q540.86 217.16 540.5 213.62Q540.14 210.08 539.8399999999999 206.42000000000002Q539.54 202.76 539.3599999999999 198.86Q539.18 194.96 539.06 190.58Q538.9399999999999 186.20000000000002 538.9399999999999 181.04000000000002V158.12H556.5799999999999V242.12H540.26L492.86 178.76L497.42 178.88Q498.02 185.12 498.44 189.5Q498.86 193.88 499.15999999999997 197.12Q499.46 200.36 499.58 202.76Q499.7 205.16 499.76 207.32Q499.82 209.48000000000002 499.82 211.88V242.12ZM607.3299999999999 158.12 573.85 242.12H592.93L610.4499999999999 196.64Q611.89 192.92000000000002 612.91 190.10000000000002Q613.93 187.28 614.71 184.82Q615.49 182.36 616.21 180.02Q616.93 177.68 617.65 174.92000000000002L614.17 174.8Q615.13 178.52 616.03 181.7Q616.93 184.88 618.1899999999999 188.42000000000002Q619.4499999999999 191.96 621.25 196.64L637.81 242.12H656.77L623.05 158.12ZM674.04 242.12V158.12H708.48Q717.72 158.12 725.22 161.18Q732.72 164.24 738.1800000000001 169.82Q743.64 175.4 746.52 183.07999999999998Q749.4 190.76 749.4 200.12Q749.4 209.36 746.52 217.10000000000002Q743.64 224.84 738.24 230.42000000000002Q732.84 236.0 725.28 239.06Q717.72 242.12 708.48 242.12ZM692.04 229.04 690.12 225.92000000000002H707.88Q713.28 225.92000000000002 717.5999999999999 224.06Q721.92 222.20000000000002 724.98 218.9Q728.04 215.6 729.5999999999999 210.8Q731.16 206.0 731.16 200.12Q731.16 194.24 729.5999999999999 189.5Q728.04 184.76 724.98 181.4Q721.92 178.04000000000002 717.5999999999999 176.18Q713.28 174.32 707.88 174.32H689.76L692.04 171.44Z"/>
+    <path id="d-dot" d="M284.60 96.31C285.82 95.75 293.89 90.16 296.12 88.33C297.05 87.57 298.47 86.45 299.27 85.84C307.37 79.77 316.65 69.57 319.87 63.21C324.37 54.29 323.42 46.87 316.93 40.39C311.71 35.17 302.47 29.94 292.06 26.31C284.26 23.59 284.61 23.53 280.65 27.98C279.19 29.61 276.08 33.07 273.73 35.66C271.38 38.26 268.80 41.19 268.00 42.17C267.21 43.15 264.27 46.49 261.48 49.60C258.69 52.70 255.68 56.10 254.80 57.15C253.92 58.21 252.02 60.38 250.58 61.99C245.98 67.13 245.97 67.73 250.45 71.30C251.74 72.33 254.37 74.51 256.29 76.14C258.21 77.78 260.44 79.61 261.24 80.21C262.05 80.82 263.92 82.34 265.41 83.59C266.89 84.84 269.32 86.83 270.81 88.01C272.29 89.18 274.64 91.13 276.04 92.33C281.40 96.94 282.28 97.36 284.60 96.31Z"/>
+    <symbol id="logo-sym" viewBox="0 0 752 243">
+      <use href="#d-mark" fill="currentColor" fill-rule="evenodd"/>
+      <use href="#d-support" fill="#F5821F"/>
+      <use href="#d-word" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="hdr">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="سند، الصفحة الرئيسية"><svg viewBox="0 0 752 243" role="img" aria-label="شعار سند"><use href="#logo-sym"/></svg></a>
+    <nav class="nav" aria-label="الأقسام"><a href="#services">خدماتنا</a><a href="#process">كيف نعمل</a><a href="#work">أعمالنا</a><a href="#contact">تواصل</a></nav>
+    <a class="btn btn-navy" href="#contact">اطلب عرض سعر</a>
+  </div>
+</header>
+
+<main id="top">
+  <section aria-label="المقدمة">
+    <div class="hero-pin" id="hero-pin">
+      <div class="hero-sticky" id="hero-sticky">
+        <div class="wrap hero-grid">
+          <div class="hero-copy" id="hero-copy">
+            <h1>نسندك<br>لتكبر.</h1>
+            <p class="en-line en">We back your growth.</p>
+            <p class="lead">وكالة تسويق وإبداع. نبني لعلامتك ما تقف عليه: استراتيجية، هوية، محتوى، وإعلانات نقيس نتائجها.</p>
+            <div class="row">
+              <a class="btn btn-navy" href="#contact">اطلب عرض سعر</a>
+              <a class="btn btn-line" href="#work">شاهد أعمالنا</a>
+            </div>
+          </div>
+          <div class="hero-mark">
+            <svg id="hero-mark" viewBox="0 0 752 243" role="img" aria-label="شعار سند">
+              <use href="#d-dot" fill="#F5821F" id="dot-shape"/>
+              <use href="#d-mark" fill="#0E2350" fill-rule="evenodd"/>
+              <use href="#d-support" fill="#F5821F"/>
+              <g id="hero-word"><use href="#d-word" fill="#0E2350"/></g>
+            </svg>
+            <div class="cap" id="hero-cap"><span>كلمة «سند» بخط النستعليق، مفرّغة من مستطيل.</span><span>مرّر لتدخل من النقطة</span></div>
+          </div>
+        </div>
+        <canvas id="streaks" class="fx" aria-hidden="true"></canvas>
+        <div class="fx vig" id="vig" aria-hidden="true"></div>
+        <div class="fx title-card" id="tcard"><div class="wrap" style="width:100%"><h2>علامتك هي ما يراه الناس. نحن ما يحملها.</h2></div></div>
+        <div class="fx flash" id="flash" aria-hidden="true"></div>
+        <div class="fx grain" aria-hidden="true"></div>
+        <div class="lb lb-top" id="lbt" aria-hidden="true"></div>
+        <div class="lb lb-bot" id="lbb"><p class="sub" id="sub" aria-live="off"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="orange statement" id="about">
+    <div class="wrap">
+      <h2 class="rm-only">علامتك هي ما يراه الناس. نحن ما يحملها.</h2>
+      <div class="cols" style="margin-top:0">
+        <p>البرتقالي في شعارنا يقف تحت حرف الدال ويحمل الكلمة كلها. هكذا نعمل مع عملائنا: نفهم السوق، نبني الهوية، نصنع المحتوى، وندير الإعلانات، ثم نبقى تحت العلامة نرفعها بالأرقام.</p>
+        <p>لا نبيع منشورات ولا حملات منفصلة. نبني أساساً واحداً متصلاً، ونقيس كل ما نفعله، ونرسل لك تقريراً تفهمه في دقيقتين.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="index" id="services">
+    <div class="wrap">
+      <div class="sec-title"><h2>خدماتنا</h2><p>اختر خدمة واحدة، أو اترك لنا الحملة كاملة من الفكرة حتى التقرير.</p></div>
+      <div class="svc" id="svc">
+        <div class="svc-item open"><button class="svc-head" type="button" aria-expanded="true" aria-controls="sv1" id="sh1"><h3>الاستراتيجية التسويقية<span class="en">Strategy</span></h3><span class="pm" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+          <div class="svc-body" id="sv1" role="region" aria-labelledby="sh1"><div><div class="svc-inner"><p>نبدأ بفهم السوق والمنافسين والجمهور، ونحدد هدفاً واحداً قابلاً للقياس، ثم نكتب الرسائل ونوزّع الميزانية على القنوات.</p><ul><li>تحليل المنافسين</li><li>شخصية العميل</li><li>خطة ربع سنوية بالميزانية</li></ul></div></div></div></div>
+        <div class="svc-item"><button class="svc-head" type="button" aria-expanded="false" aria-controls="sv2" id="sh2"><h3>الهوية البصرية<span class="en">Branding</span></h3><span class="pm" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+          <div class="svc-body" id="sv2" role="region" aria-labelledby="sh2"><div><div class="svc-inner"><p>شعار وألوان وخطوط ودليل استخدام، لتظهر علامتك بالشخصية نفسها على المنشور والعبوة واللافتة.</p><ul><li>الشعار ونسخه</li><li>دليل الهوية</li><li>التغليف والمطبوعات</li></ul></div></div></div></div>
+        <div class="svc-item"><button class="svc-head" type="button" aria-expanded="false" aria-controls="sv3" id="sh3"><h3>إدارة السوشال ميديا<span class="en">Social media</span></h3><span class="pm" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+          <div class="svc-body" id="sv3" role="region" aria-labelledby="sh3"><div><div class="svc-inner"><p>تقويم محتوى شهري، تصميم ونشر على Instagram و TikTok و Facebook و LinkedIn، والرد على جمهورك.</p><ul><li>تقويم شهري</li><li>تصميم ونشر</li><li>إدارة التعليقات والرسائل</li></ul></div></div></div></div>
+        <div class="svc-item"><button class="svc-head" type="button" aria-expanded="false" aria-controls="sv4" id="sh4"><h3>الإعلانات المموّلة<span class="en">Paid ads</span></h3><span class="pm" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+          <div class="svc-body" id="sv4" role="region" aria-labelledby="sh4"><div><div class="svc-inner"><p>حملات Meta و Google و TikTok مبنية على هدف واضح، مع اختبار مستمر للإعلانات والجماهير ومتابعة العائد على الإنفاق وتكلفة العميل.</p><ul><li>إعداد الحملات والتتبع</li><li>اختبار الإعلانات</li><li>تقرير أسبوعي</li></ul></div></div></div></div>
+        <div class="svc-item"><button class="svc-head" type="button" aria-expanded="false" aria-controls="sv5" id="sh5"><h3>المحتوى والموشن<span class="en">Content and motion</span></h3><span class="pm" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+          <div class="svc-body" id="sv5" role="region" aria-labelledby="sh5"><div><div class="svc-inner"><p>تصوير منتجات، ريلز، موشن جرافيك، وكتابة إعلانية بالعربية والإنجليزية.</p><ul><li>تصوير المنتجات</li><li>ريلز وموشن</li><li>كتابة إعلانية</li></ul></div></div></div></div>
+        <div class="svc-item"><button class="svc-head" type="button" aria-expanded="false" aria-controls="sv6" id="sh6"><h3>المواقع وصفحات الهبوط<span class="en">Web</span></h3><span class="pm" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+          <div class="svc-body" id="sv6" role="region" aria-labelledby="sh6"><div><div class="svc-inner"><p>مواقع سريعة وصفحات هبوط تحوّل الزائر إلى عميل، متصلة بأدوات التتبع من أول يوم.</p><ul><li>صفحات هبوط</li><li>متاجر إلكترونية</li><li>تتبع التحويلات</li></ul></div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="sec-title"><h2>كيف نعمل</h2><p>كل مرحلة تقف على التي قبلها، فيعلو ما نبنيه لعلامتك خطوة بعد خطوة.</p></div>
+      <div class="stack">
+        <div class="col"><span class="n en">1</span><h3>نفهم</h3><p>جلسة اكتشاف مع فريقك، ومراجعة حساباتك وإعلاناتك السابقة ومنافسيك.</p><p class="out">تستلم: تقرير الوضع الحالي</p><div class="block"></div></div>
+        <div class="col"><span class="n en">2</span><h3>نخطّط</h3><p>هدف قابل للقياس، جمهور، رسائل، وقنوات، وتوزيع الميزانية عليها.</p><p class="out">تستلم: الاستراتيجية وخطة الحملة</p><div class="block"></div></div>
+        <div class="col"><span class="n en">3</span><h3>نصنع</h3><p>الهوية والمحتوى والإعلانات، وصفحات الهبوط وأدوات التتبع.</p><p class="out">تستلم: حملة جاهزة للإطلاق</p><div class="block"></div></div>
+        <div class="col"><span class="n en">4</span><h3>نقيس ونطوّر</h3><p>متابعة أسبوعية، اختبار بدائل، وتقرير شهري بلغة واضحة.</p><p class="out">تستلم: تقرير شهري وتوصيات</p><div class="block"></div></div>
+      </div>
+      <div class="baseline" aria-hidden="true"></div>
+    </div>
+    <div class="wrap note"><span>مدة الدورة الأولى عادة من أربعة إلى ستة أسابيع.</span><span>بعدها نعمل بدورات شهرية.</span></div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="sec-title"><h2>أعمال مختارة</h2><p>دراسات حالة من الهوية حتى الحملة، بأرقامها الحقيقية.</p></div>
+      <article class="feature">
+        <div class="plate"><svg viewBox="0 0 752 243" role="img" aria-label="هوية سند"><use href="#logo-sym"/></svg></div>
+        <div class="txt"><h3>هوية سند</h3><p>رمز مبني من كلمة «سند» بخط النستعليق: مستطيل تُفرَّغ منه الكلمة، وقطعة برتقالية تحت الدال تحملها. معه دليل هوية كامل وفيلم تعريفي.</p><p class="meta">هوية بصرية، موشن، موقع</p></div>
+      </article>
+      <div class="more">
+        <article><div class="plate ph">[صورة المشروع]</div><h3>[اسم العميل]</h3><p>[وصف المشروع ونتيجته الحقيقية]</p></article>
+        <article><div class="plate ph">[صورة المشروع]</div><h3>[اسم العميل]</h3><p>[وصف المشروع ونتيجته الحقيقية]</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>جاهز تكبر؟</h2>
+        <p class="lead">احكِ لنا عن علامتك. نجهّز لك رسالة مرتبة ترسلها لنا على واتساب، ونرد خلال يوم عمل.</p>
+        <div class="lines">
+          <div><span>واتساب</span><b class="en">[+970 00 000 0000]</b></div>
+          <div><span>البريد</span><b class="en">[hello@sanad.ps]</b></div>
+          <div><span>العنوان</span><b>[المدينة، فلسطين]</b></div>
+        </div>
+      </div>
+      <form id="brief" novalidate>
+        <div class="field"><label for="f-name">الاسم</label><input id="f-name" autocomplete="name" placeholder="اسمك الكامل"></div>
+        <div class="field"><label for="f-biz">اسم النشاط</label><input id="f-biz" placeholder="علامتك أو متجرك"></div>
+        <div class="field full"><label id="l-svc">ماذا تحتاج؟</label>
+          <div class="chips" role="group" aria-labelledby="l-svc">
+            <label class="chip"><input type="checkbox" id="s1" value="استراتيجية تسويقية"><span>استراتيجية</span></label>
+            <label class="chip"><input type="checkbox" id="s2" value="هوية بصرية"><span>هوية بصرية</span></label>
+            <label class="chip"><input type="checkbox" id="s3" value="إدارة سوشال ميديا"><span>سوشال ميديا</span></label>
+            <label class="chip"><input type="checkbox" id="s4" value="إعلانات مموّلة"><span>إعلانات</span></label>
+            <label class="chip"><input type="checkbox" id="s5" value="محتوى وموشن"><span>محتوى وموشن</span></label>
+            <label class="chip"><input type="checkbox" id="s6" value="موقع أو صفحة هبوط"><span>موقع</span></label>
+          </div></div>
+        <div class="field full"><label for="f-msg">هدفك في الأشهر الثلاثة القادمة</label><textarea id="f-msg" placeholder="مثلاً: إطلاق منتج جديد"></textarea></div>
+        <div class="field full"><button class="btn btn-orange" type="submit" style="justify-self:start">جهّز رسالتي</button></div>
+        <div class="result" id="result" hidden><b>رسالتك جاهزة. انسخها وأرسلها لنا على واتساب:</b><pre id="result-text"></pre>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn btn-line" style="border-color:var(--mist);color:var(--mist)" type="button" id="copy">انسخ الرسالة</button><span id="copied" style="font-size:14px;color:var(--muted-on-navy)"></span></div></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg viewBox="0 0 752 243" role="img" aria-label="سند"><use href="#logo-sym"/></svg>
+    <span>© 2026 سند للحلول التسويقية والإبداعية</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ---- hero: a cinematic shot through the orange nuqta ----
+  const pin = document.getElementById('hero-pin'), sticky = document.getElementById('hero-sticky'), svg = document.getElementById('hero-mark'),
+        dot = document.getElementById('dot-shape'), copy = document.getElementById('hero-copy'), word = document.getElementById('hero-word'),
+        cap = document.getElementById('hero-cap'), hdr = document.getElementById('hdr'), lbt = document.getElementById('lbt'), lbb = document.getElementById('lbb'),
+        sub = document.getElementById('sub'), vig = document.getElementById('vig'), flash = document.getElementById('flash'), tcard = document.getElementById('tcard'),
+        cv = document.getElementById('streaks'), cx2 = cv.getContext('2d');
+  const seg = (x, a, b) => Math.min(1, Math.max(0, (x - a) / (b - a)));
+  const io = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const expoIn = t => t <= 0 ? 0 : Math.pow(2, 10 * t - 10);
+  const SUBS = [[0.03, 0.36, 'كل علامة تبدأ بنقطة.'], [0.42, 0.76, 'ومنها نبني ما يحمل علامتك.']];
+  const STREAKS = Array.from({ length: 110 }, () => ({ a: Math.random() * Math.PI * 2, r: Math.random(), l: .4 + Math.random() * .9, w: .6 + Math.random() * 1.8, o: Math.random() < .22 }));
+  let box = null, pT = 0, pS = 0, dpr = 1;
+  const measure = () => { const b = dot.getBBox(); box = { cx: b.x + b.width / 2, cy: b.y + b.height / 2, hw: b.width / 2, hh: b.height / 2 };
+    dpr = Math.min(2, devicePixelRatio || 1); cv.width = sticky.clientWidth * dpr; cv.height = sticky.clientHeight * dpr; };
+  const readScroll = () => { const r = pin.getBoundingClientRect(); pT = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight))); };
+  function render(p) {
+    const k = svg.clientWidth / 752;
+    const sr = svg.parentElement.getBoundingClientRect(), ox = box.cx * k, oy = box.cy * k, sx = sr.left + ox, sy = sr.top + oy;
+    const X = Math.max(sx, innerWidth - sx), Y = Math.max(sy, innerHeight - sy);
+    const zFull = (X / (box.hw * k) + Y / (box.hh * k)) * 1.5;
+    // camera: settle back, then rush in
+    const ant = io(seg(p, 0.06, 0.2)), push = seg(p, 0.18, 0.8);
+    const z0 = 1 - 0.07 * ant, z = z0 + (zFull - z0) * expoIn(push) * (push > 0 ? 1 : 0);
+    svg.setAttribute('viewBox', (box.cx * (1 - 1 / z)).toFixed(3) + ' ' + (box.cy * (1 - 1 / z)).toFixed(3) + ' ' + (752 / z).toFixed(4) + ' ' + (243 / z).toFixed(4));
+    const rot = -1.4 * ant + 3.2 * Math.sin(Math.PI * push);
+    svg.style.transformOrigin = ox + 'px ' + oy + 'px'; svg.style.transform = 'rotate(' + rot.toFixed(3) + 'deg)';
+    // the wordmark passes the lens first
+    const wq = seg(p, 0.1, 0.32); word.style.opacity = 1 - wq;
+    // foreground copy recedes out of focus
+    const q = seg(p, 0, 0.16);
+    copy.style.opacity = 1 - q; copy.style.filter = q > 0 ? 'blur(' + (8 * q).toFixed(2) + 'px)' : ''; copy.style.transform = 'scale(' + (1 - .06 * q) + ') translateY(' + (-24 * q) + 'px)';
+    copy.style.visibility = q >= 1 ? 'hidden' : 'visible'; cap.style.opacity = 1 - q;
+    // the nuqta glows as we approach
+    dot.style.opacity = io(seg(p, 0.1, 0.32)).toFixed(3);
+    const g = seg(p, 0.12, 0.45); dot.style.filter = g > 0 ? 'drop-shadow(0 0 ' + (3 + 14 * g).toFixed(1) + 'px rgba(245,130,31,' + (.35 + .5 * g).toFixed(2) + '))' : '';
+    // letterbox + subtitles + header
+    const lb = io(seg(p, 0.0, 0.1)) * (1 - io(seg(p, 0.86, 0.97))), barH = (innerWidth < 700 ? 8 : 10.5) * lb;
+    lbt.style.height = barH + 'svh'; lbb.style.height = barH + 'svh';
+    hdr.classList.toggle('hide', p > 0.015 && p < 0.97);
+    let txt = '', so = 0;
+    for (const [a, b, t] of SUBS) if (p >= a && p < b) { txt = t; so = Math.min(seg(p, a, a + .05), 1 - seg(p, b - .05, b)); }
+    if (sub.textContent !== txt) sub.textContent = txt; sub.style.opacity = so.toFixed(3);
+    vig.style.opacity = (.75 * seg(p, .04, .3) * (1 - seg(p, .78, .88))).toFixed(3);
+    // light burst as we pass through
+    const f = Math.max(0, 1 - Math.abs(p - .8) / .055); flash.style.opacity = (f * .9).toFixed(3);
+    sticky.classList.toggle('filled', p > .8);
+    // title card resolves from blur, like a lens pulling focus
+    const t = io(seg(p, .83, .97));
+    tcard.style.opacity = t.toFixed(3); const h = tcard.querySelector('h2');
+    h.style.filter = t < 1 ? 'blur(' + ((1 - t) * 14).toFixed(2) + 'px)' : ''; h.style.letterSpacing = ((1 - t) * .14).toFixed(3) + 'em'; h.style.transform = 'translateY(' + ((1 - t) * 24).toFixed(1) + 'px)';
+    // speed streaks radiating from the nuqta
+    const si = Math.pow(Math.sin(Math.PI * seg(p, .3, .82)), 1.4);
+    cx2.clearRect(0, 0, cv.width, cv.height);
+    if (si > .01) {
+      const cxp = (sx - sticky.getBoundingClientRect().left) * dpr, cyp = (sy - sticky.getBoundingClientRect().top) * dpr, R = Math.hypot(cv.width, cv.height) * .6;
+      for (const s of STREAKS) { const r0 = ((s.r + push * 2.4) % 1) * R + R * .08, len = s.l * R * .22 * si;
+        cx2.strokeStyle = s.o ? 'rgba(245,130,31,' + (.55 * si) + ')' : 'rgba(243,245,249,' + (.38 * si) + ')'; cx2.lineWidth = s.w * dpr;
+        cx2.beginPath(); cx2.moveTo(cxp + Math.cos(s.a) * r0, cyp + Math.sin(s.a) * r0); cx2.lineTo(cxp + Math.cos(s.a) * (r0 + len), cyp + Math.sin(s.a) * (r0 + len)); cx2.stroke(); }
+    }
+  }
+  if (!RM) {
+    measure(); readScroll(); pS = pT; render(pS);
+    addEventListener('scroll', readScroll, { passive: true });
+    addEventListener('resize', () => { measure(); readScroll(); });
+    document.fonts && document.fonts.ready.then(measure);
+    let last = performance.now();
+    (function loop(now) { const dt = Math.min(.05, ((now || performance.now()) - last) / 1000); last = now || performance.now();
+      pS += (pT - pS) * (1 - Math.exp(-dt * 6)); if (Math.abs(pT - pS) < 1e-4) pS = pT; render(pS); requestAnimationFrame(loop); })();
+  }
+
+  // ---- services index: one row open at a time ----
+  const items = [...document.querySelectorAll('.svc-item')];
+  items.forEach(it => it.querySelector('.svc-head').addEventListener('click', () => {
+    const open = !it.classList.contains('open');
+    items.forEach(o => { o.classList.remove('open'); o.querySelector('.svc-head').setAttribute('aria-expanded', 'false'); });
+    if (open) { it.classList.add('open'); it.querySelector('.svc-head').setAttribute('aria-expanded', 'true'); }
+  }));
+
+  // ---- brief → a ready WhatsApp message (the page sends nothing itself) ----
+  const f = document.getElementById('brief'), out = document.getElementById('result'), txt = document.getElementById('result-text');
+  f.addEventListener('submit', e => { e.preventDefault();
+    const n = f.querySelector('#f-name'), b = f.querySelector('#f-biz');
+    if (!n.value.trim()) { n.focus(); return; } if (!b.value.trim()) { b.focus(); return; }
+    const sv = [...f.querySelectorAll('.chip input:checked')].map(i => i.value), m = f.querySelector('#f-msg').value.trim();
+    txt.textContent = 'مرحباً سند،\nأنا ' + n.value.trim() + ' من ' + b.value.trim() + '.\n' + (sv.length ? 'أحتاج: ' + sv.join('، ') + '.\n' : '') + (m ? 'هدفي: ' + m : '');
+    out.hidden = false; out.scrollIntoView({ block: 'nearest', behavior: RM ? 'auto' : 'smooth' }); });
+  document.getElementById('copy').addEventListener('click', () => { const d = t => document.getElementById('copied').textContent = t;
+    navigator.clipboard.writeText(txt.textContent).then(() => d('نُسخت الرسالة'), () => { const r = document.createRange(); r.selectNodeContents(txt); const s = getSelection(); s.removeAllRanges(); s.addRange(r); d('حدّد النص وانسخه'); }); });
+})();
+</script>
+
+</body>
+</html>
